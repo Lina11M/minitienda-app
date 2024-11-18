@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Timers;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -19,6 +20,12 @@ namespace Presentation
         ProvidersLog objPro = new ProvidersLog();
         CategoryLog objCat = new CategoryLog();
 
+
+        private int _id, _quantity, _fkProvider, _fkCategory;
+        private string _code, _description;
+        private double _price;
+        private bool executed = false;
+
         protected void Page_Load(object sender, EventArgs e)
         {
              /* 
@@ -31,6 +38,8 @@ namespace Presentation
                 showProducts();//Se invoca el metodo para mostrar todos los productos
                 //showProvidersDDL();//Se invoca el metodo para mostrar los proveedores en el DDL
                 showCategoriesDDL();
+
+
                 // Se oculta el campo de texto TBId.
                 //TBId.Visible = false;
             }
@@ -62,10 +71,13 @@ namespace Presentation
         {
             DDLProviders.DataSource = objPro.showProvidersDDL();
             DDLProviders.DataValueField = "prov_id";//Nombre de la llave primaria
-            DDLProviders.DataTextField = "prov_nombre";
+            DDLProviders.DataTextField = "nombre";
             DDLProviders.DataBind();
             DDLProviders.Items.Insert(0, "Seleccione");
         }
+
+
+
         //Metodo para mostrar todos los productos
         private void showProducts()
         {
@@ -74,5 +86,108 @@ namespace Presentation
             GVProducts.DataSource = ds;
             GVProducts.DataBind();
         }
+
+        //Metodo para limpiar los TextBox y DDL
+        private void clear()
+        {
+            HFProductId.Value = "";
+            TBCode.Text = "";
+            TBDescription.Text = "";
+            TBPrice.Text = "";
+            TBQuantity.Text = "";
+            DDLCategories.SelectedIndex = 0;
+            DDLProviders.SelectedIndex = 0;
+
+        }
+
+
+        //Cuando se da clic en el boton guardar
+        protected void BtnSave_Click(object sender, EventArgs e)
+        {
+            _code = TBCode.Text;
+            _description = TBDescription.Text;
+            _quantity = Convert.ToInt32(TBQuantity.Text);
+            _price = Convert.ToDouble(TBPrice.Text);
+            _fkCategory = Convert.ToInt32(DDLCategories.SelectedValue);
+            _fkProvider = Convert.ToInt32(DDLProviders.SelectedValue);
+
+            executed = objProd.saveProducts(_code, _description, _quantity, _price, _fkProvider, _fkCategory);
+
+            if (executed)
+            {
+                LblMsj.Text = "El producto se guardo exitosamente";
+                clear(); //Limpia las cajas de texto
+                showProducts(); //Se invoca el metodo para mostrar los productos
+            }
+            else
+            {
+                LblMsj.Text = "Error al guardar";
+            }
+        }
+
+        //Caundo se da clicl en el boton actualizar
+        protected void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            _id = Convert.ToInt32(HFProductId.Value); 
+            _code = TBCode.Text;  //Captura el valor que se ingrese en el Texbox
+            _description = TBDescription.Text;
+            _quantity = Convert.ToInt32(TBQuantity.Text);
+            _price = Convert.ToDouble(TBPrice.Text);
+            _fkCategory = Convert.ToInt32(DDLCategories.SelectedValue);
+            _fkProvider = Convert.ToInt32(DDLProviders.SelectedValue);
+
+            executed = objProd.updateProducts(_id, _code, _description, _quantity, _price, _fkProvider, _fkCategory);
+
+            if (executed)
+            {
+                LblMsj.Text = "El producto se actualizo exitosamente";
+                clear(); //Limpia las cajas de texto
+                showProducts(); //Se invoca el metodo para mostrar los productos
+            }
+            else
+            {
+                LblMsj.Text = "Error al actualizar";
+            }
+        }
+
+
+        //Evento para seleccionar una fila de la capa
+        protected void GVProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HFProductId.Value = GVProducts.SelectedRow.Cells[0].Text;
+            TBCode.Text = GVProducts.SelectedRow.Cells[1].Text;
+            TBDescription.Text = GVProducts.SelectedRow.Cells[2].Text;
+            TBQuantity.Text = GVProducts.SelectedRow.Cells[3].Text;
+            TBPrice.Text = GVProducts.SelectedRow.Cells[4].Text;
+            DDLProviders.SelectedValue = GVProducts.SelectedRow.Cells[5].Text;
+            DDLCategories.SelectedValue = GVProducts.SelectedRow.Cells[6].Text;
+            
+        }
+
+        protected void GVProducts_RowDeleting(object sender, EventArgs e)
+        {
+            // Verifica si HFProductId tiene un valor válido
+            if (!string.IsNullOrEmpty(HFProductId.Value) && int.TryParse(HFProductId.Value, out _id))
+            {
+                executed = objProd.deleteProducts(_id);
+
+                if (executed)
+                {
+                    LblMsj.Text = "El producto se eliminó exitosamente";
+                    clear(); // Limpia las cajas de texto
+                    showProducts(); // Muestra los productos
+                }
+                else
+                {
+                    LblMsj.Text = "Error al eliminar";
+                }
+            }
+            else
+            {
+                // Si no hay un ID válido, muestra un mensaje de error
+                LblMsj.Text = "No se ha seleccionado un producto válido para eliminar.";
+            }
+        }
+
     }
 }

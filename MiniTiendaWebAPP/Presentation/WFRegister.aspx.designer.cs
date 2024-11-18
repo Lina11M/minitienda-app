@@ -11,21 +11,17 @@ namespace Presentation
 {
 
 
-    public partial class WFProducts
+    public partial class WFRegister
     {
 
-
-        /// Control HFProductId.
-        /// Control TextBox1.
+        /// <summary>
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-
-        protected global::System.Web.UI.WebControls.HiddenField HFProductId;
-
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
-
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// Control Label1.
@@ -37,13 +33,13 @@ namespace Presentation
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control TBCode.
+        /// Control TBCorreo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBCode;
+        protected global::System.Web.UI.WebControls.TextBox TBCorreo;
 
         /// <summary>
         /// Control Label2.
@@ -55,13 +51,31 @@ namespace Presentation
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control TBDescription.
+        /// Control TBContraseña.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBDescription;
+        protected global::System.Web.UI.WebControls.TextBox TBContraseña;
+
+        /// <summary>
+        /// Control Label3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+
+        /// <summary>
+        /// Control DDLState.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDLState;
 
         /// <summary>
         /// Control Label4.
@@ -73,85 +87,13 @@ namespace Presentation
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control TBQuantity.
+        /// Control DDLRol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBQuantity;
-
-        /// <summary>
-        /// Control Label5.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-
-        /// <summary>
-        /// Control TBPrice.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBPrice;
-
-        /// <summary>
-        /// Control Label6.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
-
-        /// <summary>
-        /// Control DDLCategories.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLCategories;
-
-        /// <summary>
-        /// Control Label7.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
-
-        /// <summary>
-        /// Control DDLProviders.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLProviders;
-
-        /// <summary>
-        /// Control BtnSave.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSave;
-
-        /// <summary>
-        /// Control BtnUpdate.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnUpdate;
+        protected global::System.Web.UI.WebControls.DropDownList DDLRol;
 
         /// <summary>
         /// Control LblMsj.
@@ -163,12 +105,12 @@ namespace Presentation
         protected global::System.Web.UI.WebControls.Label LblMsj;
 
         /// <summary>
-        /// Control GVProducts.
+        /// Control BtnIngresar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVProducts;
+        protected global::System.Web.UI.WebControls.Button BtnIngresar;
     }
 }

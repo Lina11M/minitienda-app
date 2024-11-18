@@ -90,7 +90,14 @@
       <Project>{6916c0a5-fd35-4fde-bb3d-00f59b70d2c8}</Project>
       <Name>Data</Name>
     </ProjectReference>
+
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{3b8d4afa-a892-4647-8f08-1351cccfaa87}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+
   </ItemGroup>
+
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
