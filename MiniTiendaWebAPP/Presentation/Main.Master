@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Presentation.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MiniTienda</title>
+
+    <%--Estilos de la pagina--%>
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <%-- Barra de navegacion--%>
+                    <nav class="navbar navbar-expand-lg navbar-dark navbar bg-primary ">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">MiniTienda</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="inicio.aspx">Inicio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Categoria</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="WFProducts.aspx">Productos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Proveedores</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Usuarios</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+
+        <%--Aqui va lo que se repite en los demas formularios--%>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <%--Pie de página--%>
+
+
+    <%--Bundle JS--%>
+    <script src="resources/js/bootstrap.bundle.min.js"></script>
+
+    <%--Bootstrap JS--%>
+    <script src="resources/js/bootstrap.min.js"></script>
+
+</body>
+</html>
