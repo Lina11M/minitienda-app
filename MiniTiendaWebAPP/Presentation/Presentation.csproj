@@ -70,12 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< Updated upstream
+
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-=======
+
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="resources\css\bootstrap-grid.css" />
@@ -103,6 +103,11 @@
     <Content Include="Web.config" />
     <Content Include="WFProducts.aspx" />
     <Content Include="WFRegister.aspx" />
+
+    <Content Include="Inicio.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="WFProducts.aspx" />
+
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Inicio.aspx.cs">
@@ -112,6 +117,7 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
+
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -119,6 +125,8 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+
+
     <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -134,6 +142,7 @@
     <Compile Include="WFProducts.aspx.designer.cs">
       <DependentUpon>WFProducts.aspx</DependentUpon>
     </Compile>
+
     <Compile Include="WFRegister.aspx.cs">
       <DependentUpon>WFRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -141,9 +150,11 @@
     <Compile Include="WFRegister.aspx.designer.cs">
       <DependentUpon>WFRegister.aspx</DependentUpon>
     </Compile>
->>>>>>> Stashed changes
+
+
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Main.Master" />
     <None Include="packages.config" />
     <Content Include="resources\css\bootstrap-grid.css.map" />
     <Content Include="resources\css\bootstrap-grid.min.css.map" />
@@ -174,13 +185,13 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-<<<<<<< Updated upstream
-=======
+
   <ItemGroup>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{635929b4-31e0-44a3-8745-b8d2ee48ea88}</Project>
       <Name>Logic</Name>
     </ProjectReference>
+
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{3b8d4afa-a892-4647-8f08-1351cccfaa87}</Project>
       <Name>Model</Name>
@@ -189,7 +200,10 @@
   <ItemGroup>
     <Folder Include="resources\images\" />
   </ItemGroup>
->>>>>>> Stashed changes
+
+
+  </ItemGroup>
+
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

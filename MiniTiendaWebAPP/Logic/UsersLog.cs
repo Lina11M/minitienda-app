@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using Model;
 
+
 namespace Logic
 {
     public class UsersLog
@@ -42,6 +43,7 @@ namespace Logic
         {
             return objUsers.showUserMail(mail);
         }
+
 
 
 

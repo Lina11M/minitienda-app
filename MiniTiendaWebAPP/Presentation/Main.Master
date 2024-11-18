@@ -4,17 +4,22 @@
 
 <html>
 <head runat="server">
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>MiniTienda</title>
 
     <%--Estilos de la pagina--%>
     <link href="resources/css/bootstrap.min.css" rel="stylesheet" />
 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
+
 
         <div class="container-fluid">
             <div class="row">
@@ -55,11 +60,20 @@
 
         <%--Aqui va lo que se repite en los demas formularios--%>
 
+        <a href="Inicio.aspx">Inicio</a>
+        <a href="#">Categorias</a>
+        <a href="#">Provedores</a>
+        <a href="WFProducts.aspx">Productos</a>
+        <a href="#">Usuarios</a> 
+        <a href="#">Cerrar Sesion</a> 
+
+
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
+
     <%--Pie de página--%>
 
 

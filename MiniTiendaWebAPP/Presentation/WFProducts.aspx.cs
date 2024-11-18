@@ -20,6 +20,7 @@ namespace Presentation
         ProvidersLog objPro = new ProvidersLog();
         CategoryLog objCat = new CategoryLog();
 
+
         private int _id, _quantity, _fkProvider, _fkCategory;
         private string _code, _description;
         private double _price;
@@ -37,7 +38,8 @@ namespace Presentation
                 showProducts();//Se invoca el metodo para mostrar todos los productos
                 //showProvidersDDL();//Se invoca el metodo para mostrar los proveedores en el DDL
                 showCategoriesDDL();
-                showProvidersDDL();
+
+
                 // Se oculta el campo de texto TBId.
                 //TBId.Visible = false;
             }
@@ -186,5 +188,6 @@ namespace Presentation
                 LblMsj.Text = "No se ha seleccionado un producto válido para eliminar.";
             }
         }
+
     }
 }

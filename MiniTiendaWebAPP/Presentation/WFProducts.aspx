@@ -7,8 +7,10 @@
     <div>
 
         <%--Id--%>
+
         <asp:HiddenField ID="HFProductId" runat="server" />
-        <%--Permite coultar la llave primearia--%>
+
+
         <br />
         <%--Codigo--%>
         <asp:Label ID="Label1" runat="server" Text="Ingrese el codigo"></asp:Label>
@@ -19,7 +21,10 @@
         <asp:TextBox ID="TBDescription" runat="server"></asp:TextBox>
         <br />
         <%--Cantidad--%>
-        <asp:Label ID="Label4" runat="server" Text="Ingrese la cantidad"></asp:Label>
+
+
+       <asp:Label ID="Label4" runat="server" Text="Ingrese la cantidad"></asp:Label>
+
         <asp:TextBox ID="TBQuantity" runat="server"></asp:TextBox>
         <br />
         <%--Precio--%>
@@ -35,12 +40,18 @@
         <asp:DropDownList ID="DDLProviders" runat="server"></asp:DropDownList>
         <br />
 
+
+     
         <asp:Button ID="BtnSave" runat="server" Text="Guardar" OnClick="BtnSave_Click" />
         <asp:Button ID="BtnUpdate" runat="server" Text="Actualizar" OnClick="BtnUpdate_Click" />
+
+        <asp:Button ID="BtnSave" runat="server" Text="Guardar" />
+
         <asp:Label ID="LblMsj" runat="server" Text=""></asp:Label>
         <br />
 
         <%--Lista de productos--%>
+
         <asp:GridView ID="GVProducts" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GVProducts_SelectedIndexChanged" OnRowDeleting="GVProducts_RowDeleting">
 
             <%--Se agrega la propiedad "Columns" que permite personalizar los nombres de las columnas--%>
@@ -57,6 +68,9 @@
             </Columns>
 
         </asp:GridView>
+
+
+        <asp:GridView ID="GVProducts" runat="server"></asp:GridView>
 
 
     </div>
